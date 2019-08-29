@@ -1,0 +1,18 @@
+questão 1:
+#include <iostream>;
+using namespace std;
+int somar(int a, int b);
+int main (){
+    int x,y;
+    cout<<"Insira dois valores \n";
+    cin>>x>>y;
+    cout<<somar(x,y)<<endl;
+    return 0;
+}
+int somar(int a, int b){
+    int soma=0;
+    for(int i=a;i<=b;i++){
+            soma= soma+i;
+    }
+    return soma;
+}
