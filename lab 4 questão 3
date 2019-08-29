@@ -1,0 +1,28 @@
+questão 3:
+
+#include <iostream>
+using namespace std;
+int fatorial(int n);
+int somaFat(int a, int b);
+int main(){
+    int x,y , z,w ;
+    cout<<"Insira dois valores \n";
+    cin>>x>>y;
+    cout<<somaFat(x,y)<<endl;
+    return 0;
+}
+int fatorial(int n){
+    int Fat=1;
+    for(int i=1; i<=n; i++){
+        Fat = Fat*i;
+    }
+    return Fat;
+}
+int somaFat(int a, int b){
+    int soma = 1;
+    a = fatorial(a);
+    b = fatorial(b);
+    soma = a + b;
+    return soma;
+}
+
