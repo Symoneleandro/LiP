@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+void calcNota (float n1, float n2, float n3, bool& fim, float& menor );
+int menorNota ( float nx, float ny, float nz );
+int main( )
+{
+    float na, nb, nc,ne;
+    bool nd;
+    cout<<"Digite tres notas \n";
+    cin>>na>>nb>>nc;
+    calcNota(na, nb, nc, nd, ne);
+    cout<< nd<< endl;
+    cout<<ne<< endl;
+    return 0;
+}
+int menorNota ( float nx, float ny, float nz )
+{
+    int menor = 0;
+    if( nx<ny && nx<nz)
+    {
+        menor = nx;
+    }
+    if(ny<nx && ny<nz)
+    {
+        menor= ny;
+
+    }
+    if(nz<nx && nz<ny)
+    {
+        menor = nz;
+    }
+
+    return menor;
+
+}
+
+void calcNota (float n1, float n2, float n3, bool& fim, float & menor ){
+    float media =0, incognita=0, menorA =0;
+    media= (n1+n2+n3)/3;
+    if(n1>=3.0 && n2>=3.0 && n3>=3.0 || media<5.0)
+    {
+        fim = true ;
+        menorA = menorNota(n1, n2, n3);
+        menor = 5.0*3- n1- n2- n3 + menorA ;
+    }
+    else
+    {
+        fim = false;
+    }
+}
