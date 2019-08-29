@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+void calcMMC_MDC (int n1, int n2, int & mmc, int& mdc);
+int calMMC( int na, int nb);
+int calMDC(int numero1, int numero2 );
+int main (){
+    int nx, ny, nz, nw;
+    cout<< "Digite dois numeros: /n";
+    cin>> nx>>ny;
+    calcMMC_MDC(nx, ny, nz, nw );
+    cout<< nz<< endl;
+    cout<< nw <<endl;
+    return 0;
+}
+int calMMC( int na, int nb){
+    int mmc =0;
+    if(na <nb){
+        mmc = na;
+        while( mmc%na!= 0|| mmc%nb!= 0){
+            mmc++;
+        }
+    }
+    return mmc;
+}
+int calMDC(int numero1, int numero2 ){
+    int mdc = 0;
+    if (numero1 <numero2 ){
+        mdc= numero1;
+        while( numero1 % mdc !=0|| numero2 % mdc!=0){
+            mdc --;
+        }
+
+    }
+    return 0;
+}
+void calcMMC_MDC (int n1, int n2, int & mmc, int& mdc){
+mmc = calMDC( n1 , n2 );
+mdc = calMMC( n1, n2);
+
+}
