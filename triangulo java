@@ -1,0 +1,22 @@
+var a=parseFloat(prompt("Insira o valor de a: "));
+var b=parseFloat(prompt("Insira o valor de b: "));
+var c=parseFloat(prompt("Insira o valor de c: "));
+if(a<b+c && b<a+c && c<a+b)
+{
+    if(a==b && b==c){
+        alert("Equilatero")
+    }
+    if(a==b && a!=c || a==c && a!=b || b==c && a!=b)
+    {
+        alert("Isosceles")
+    }
+    if(a!=b && b!=c)
+    {
+        alert("Escaleno")
+    }
+    
+}
+else
+{
+    alert("Nao eh triangulo")
+}
