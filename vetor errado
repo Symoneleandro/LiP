@@ -1,0 +1,85 @@
+quest 2 
+#include<iostream>
+using namespace std;
+void lervetor( int vetor[], int n)
+{
+    int valor;
+    for(int i=0; i<n; i++)
+    {
+        vetor[i] = valor;
+    }
+}
+bool maiorvalor( int vetor [], int x, int i, int maior ){
+lervetor(vetor, x);
+for(i=0; i<x; i++){
+    if(vetor[i]==x){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+
+}
+
+    int n, x, maior, vetor[n],i;
+    cout<<"Insira a quantidade de vendas:";
+        cin>>n;
+    cout<<"Preco de referencia:";
+        cin>>x;
+    cout<< maiorvalor(n,x,maior, vetor[n])<< endl;
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+quest 1 
+
+ cout<<"Insira a quantidade de vendas:";
+        cin>>n;
+    cout<<"Preco de referencia:";
+        cin>>x;
+    cout<< somavetor(n,x,soma, vetor[n])<< endl;
+    return 0;
+
+}
+
+void lervetor( int vetor[], int n)
+{
+    int valor;
+    for(int i=0; i<n; i++)
+    {
+        vetor[i] = valor;
+    }
+}
+
+int somavetor( int vetor [], int x, int i, int soma ){;
+lervetor(vetor, x);
+for(i=0; i<x; i++){
+    if(vetor[i]>x){
+        soma=soma + vetor[i];
+    }
+}
+return soma;
+}
+
+
+
+
+
+
+
+
+
