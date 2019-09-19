@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+void ler_vetor(int vetor[], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Insira os valores do vetor: \n";
+        cin>>vetor[i];
+    }
+}
+int comparacao(int vetorA[], int vetorB[], int n, int j )
+{
+    int cont=0;
+    for( int i= 0; i<n; i++)
+    {
+        for (int j =i+1; j<n; j++)
+        {
+            if(vetorA[i]==vetorB[j])
+            {
+               cont++;
+
+            }
+
+        }
+
+    }
+
+    return cont;
+}
+int main()
+{
+    int n,x;
+    cout<<"Insira o tamanho do vetor a: \n";
+    cin>>n;
+    int vetor[n];
+    ler_vetor(vetor, n);
+    cout<<"Insira o tamanho do vetor b: \n";
+    cin>>x;
+    int vetorB[x];
+    ler_vetor(vetorB,x);
+    cout<<comparacao(vetor,vetorB, n,x)<<endl;
+    return 0;
+}
