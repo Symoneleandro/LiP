@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+void lervetor( int vetor[], int n);
+int somavetor( int vetor [],int n, int x);
+int main()
+{
+    int  n,x;
+    cout<<"Insira a quantidade de vendas:";
+    cin>>n;
+    int vetor[n];
+    lervetor(vetor, n);
+
+    cout<<"Preco de referencia:";
+    cin>>x;
+    cout<<somavetor(vetor,n, x )<<endl;
+
+    return 0;
+
+}
+
+void lervetor( int vetor[], int n)
+{
+    int valor;
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Digite o valor:\n";
+        cin>>vetor[i];
+    }
+}
+
+int somavetor( int vetor [],int n, int x )
+{
+int soma=0;
+    for(int i=0; i<n; i++)
+    {
+        if(vetor[i]>x)
+        {
+            soma=soma + vetor[i];
+        }
+    }
+
+    return soma;
+}
