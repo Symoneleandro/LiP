@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+void lervetor(int vetor[], int n)
+{
+    for (int i=0; i<n; i++)
+    {
+        cout<<"Digite os valores do vetor: \n";
+        cin>>vetor[i];
+    }
+int mediavetor(int vetor[], int n ){
+int media, soma ;
+for (int i=0;i<n; i++){
+    soma = soma + vetor[i];
+}
+media= soma/ n;
+return media;
+}
+
+int main(){
+int n;
+cout<<"Insira o tamanho do vetor\n";
+cin>>n;
+int vetor[n];
+lervetor(vetor,n );
+cout<<mediavetor(vetor, n)<< endl;
+return 0;
+}
