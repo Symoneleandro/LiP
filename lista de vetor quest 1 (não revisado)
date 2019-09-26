@@ -8,23 +8,31 @@ void lervetor(int vetor[], int n)
         cin>>vetor[i];
     }
 }
-float mediavetor(int vetor[], int n ){
-float soma ;
-for (int i=0;i<n; i++){
-    soma = soma + vetor[i];
+int somavetor(int vetor[], int n )
+{
+    float soma ;
+    for(int i=0; i<n; i++)
+    {
+        soma = soma + vetor[i];
+    }
+    return soma;
 }
-return soma;
+float media_vetor(int vetor[], int n)
+{
+    int soma, media;
+
+    media = somavetor(vetor,n) /n;
+    return media;
 }
 
-int main(){
-int n, soma, media ;
-cout<<"Insira o tamanho do vetor\n";
-cin>>n;
-int vetor[n];
-lervetor(vetor,n );
-soma = mediavetor(vetor, n);
-media= soma/n;
-cout<<media<< endl;
-return 0;
+int main()
+{
+    int n ;
+    cout<<"Insira o tamanho do vetor\n";
+    cin>>n;
+    int vetor[n];
+    lervetor(vetor,n );
+    cout<<media_vetor(vetor, n)<< endl;
+    return 0;
 }
 
