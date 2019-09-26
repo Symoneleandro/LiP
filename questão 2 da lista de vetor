@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+void lervetor(int vetor[], int n)
+{
+    for (int i=0; i<n; i++)
+    {
+        cout<<"Digite os valores do vetor: \n";
+        cin>>vetor[i];
+    }
+}
+int somavetor(int vetor[], int n )
+{
+    float soma ;
+    for(int i=0; i<n; i++)
+    {
+        soma = soma + vetor[i];
+    }
+    return soma;
+}
+float media_vetor(int vetor[], int n)
+{
+    int soma, media;
+
+    media = somavetor(vetor,n) /n;
+    return media;
+}
+int maior_media(int vetor[],int n,  int media ){
+    int cont=0;
+for(int i=0; i<n; i++){
+    if(vetor[i]> media){
+        cont ++;
+    }
+}
+return cont;
+}
+
+int main()
+{
+    int n, media;
+    cout<<"Insira o tamanho do vetor\n";
+    cin>>n;
+    int vetor[n];
+    lervetor(vetor,n );
+    media= media_vetor(vetor, n);
+    cout<<maior_media(vetor, n, media)<< endl;
+    return 0;
+}
