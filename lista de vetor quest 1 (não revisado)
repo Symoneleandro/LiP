@@ -7,21 +7,24 @@ void lervetor(int vetor[], int n)
         cout<<"Digite os valores do vetor: \n";
         cin>>vetor[i];
     }
-int mediavetor(int vetor[], int n ){
-int media, soma ;
+}
+float mediavetor(int vetor[], int n ){
+float soma ;
 for (int i=0;i<n; i++){
     soma = soma + vetor[i];
 }
-media= soma/ n;
-return media;
+return soma;
 }
 
 int main(){
-int n;
+int n, soma, media ;
 cout<<"Insira o tamanho do vetor\n";
 cin>>n;
 int vetor[n];
 lervetor(vetor,n );
-cout<<mediavetor(vetor, n)<< endl;
+soma = mediavetor(vetor, n);
+media= soma/n;
+cout<<media<< endl;
 return 0;
 }
+
