@@ -1,0 +1,26 @@
+Questão 2 
+
+#include<iostream>
+using namespace std;
+int mdc(int x, int y);
+int main(){
+int a, b, valor;
+cout<<"insira um valor: \n";
+cin>>a>>b;
+cout<<mdc(a,b)<<endl;
+return 0;
+}
+int mdc(int x, int y){
+    int aux, resto;
+    if(y ==0){
+        return x;
+    }
+    else{
+        resto = x%y ;
+        aux = y;
+        y= resto;
+        x= aux;
+        return mdc(x,y);
+    }
+}
+
