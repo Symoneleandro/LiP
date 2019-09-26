@@ -1,0 +1,32 @@
+  Questão 1 
+  
+  #include<iostream>
+using namespace std;
+bool par(int n);
+int main()
+{
+    int x;
+
+    cout<<"insira um valor: \n";
+    cin>>x;
+    cout<<par(x)<<endl;
+    return 0;
+}
+bool par(int n)
+{
+    if(n==0)
+    {
+        return true;
+    }
+    else if(n==1)
+    {
+        return false;
+    }
+    else
+    {
+        return par(n-2);
+    }
+}
+
+
+
