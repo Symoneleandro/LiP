@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+void lervetor(int vetornota[], int n)
+{
+    int maior;
+    for (int i=0; i<n; i++)
+    {
+        cout<<"Digite os valores do vetor: \n";
+        cin>>vetornota[i];
+    }
+    maior=vetornota[0];
+    for (int i=0; i<n; i++){
+        if(maior<vetornota[i]){
+            maior=vetornota[i];
+        }
+    }
+    for (int i=0; i<n; i++){
+        if(vetornota[i]==maior) cout<<i<<" ";
+    }
+}
+
+int main(){
+ int  n, maior;
+    cout<<"Insira a quantidade de vendas:";
+    cin>>n;
+    int vetor[n];
+    lervetor(vetor,n );
+    
+    return 0;
+}
+
