@@ -1,32 +1,51 @@
 #include<iostream>
 using namespace std;
-void lervetor(int vetornota[], int n)
+void ler_vetor(int vetor[], int n)
 {
-    int maior;
-    for (int i=0; i<n; i++)
+    for(int i=0; i<n; i++)
     {
-        cout<<"Digite os valores do vetor: \n";
-        cin>>vetornota[i];
+        cout<<"insira o corpo do vetor:\n";
+        cin>>vetor[i];
     }
-    maior=vetornota[0];
-    for (int i=0; i<n; i++){
-        if(maior<vetornota[i]){
-            maior=vetornota[i];
+}
+void contpar(int vetor[], int n)
+{
+    int cont=0, cont1=0;
+    int vetorPar[n];
+    int vetorimpar[n];
+    for(int i=0; i<n; i++)
+    {
+        if( vetor[i]%2==0)
+        {
+            vetorPar[cont]=vetor[i];
+            cont ++;
+        }
+        else
+        {
+            vetorimpar[cont1]=vetor[i];
+            cont1++;
         }
     }
-    for (int i=0; i<n; i++){
-        if(vetornota[i]==maior) cout<<i<<" ";
+    cout<<"\n O par: \n";
+    for(int i=0; i<cont; i++)
+    {
+        cout<<vetorPar[i]<<" ";
+    }
+    cout<<"\n O impar:\n";
+    for(int i =0; i<cont1; i++)
+    {
+        cout<<vetorimpar[i]<<" ";
     }
 }
 
-int main(){
- int  n, maior;
-    cout<<"Insira a quantidade de vendas:";
+
+int main()
+{
+    int n;
+    cout<<"insira o tamanho do vetor: \n";
     cin>>n;
     int vetor[n];
-    lervetor(vetor,n );
-    
+    ler_vetor(vetor, n);
+    contpar(vetor,n);
     return 0;
 }
-
-
