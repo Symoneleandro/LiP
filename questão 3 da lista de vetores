@@ -1,22 +1,22 @@
 #include<iostream>
 using namespace std;
-int lervetor(int vetornota[], int n)
+void lervetor(int vetornota[], int n)
 {
     int maior;
     for (int i=0; i<n; i++)
     {
         cout<<"Digite os valores do vetor: \n";
         cin>>vetornota[i];
-        if (i ==0){
-            maior = vetornota[i];
-        }
-        else{
-            if(vetornota[i]>maior){
-                maior = i;
-            }
+    }
+    maior=vetornota[0];
+    for (int i=0; i<n; i++){
+        if(maior<vetornota[i]){
+            maior=vetornota[i];
         }
     }
-    return maior;
+    for (int i=0; i<n; i++){
+        if(vetornota[i]==maior) cout<<i<<" ";
+    }
 }
 
 int main(){
@@ -24,12 +24,8 @@ int main(){
     cout<<"Insira a quantidade de vendas:";
     cin>>n;
     int vetor[n];
-     maior =lervetor(vetor,n );
-     for(int i=0;i<n;i++){
-         cout<<maior<<endl;
-     }
-
-
+    lervetor(vetor,n );
+    
     return 0;
 }
 
