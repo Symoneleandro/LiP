@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+const int MAX = 100;
+void zerar_matriz(int matriz [][MAX], int n ){
+for(int i =0; i<n;i++)
+{
+    for(int j=0; j<n;j++){
+        matriz [i][j] =0;
+    }
+}
+}
+void matriz_identidade(int matriz[][MAX], int n, int valor){
+for (int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+        if (i+j == n-1){
+            matriz [i][j]=valor;
+        }
+        else {
+            matriz[i][j]=0;
+        }
+    }
+}
+for(int i=0;i<n;i++){
+    for(int j=0;j<n; j++){
+        cout<<matriz[i][j]<<" ";
+
+    }
+    cout<<endl;
+}
+}
+int main (){
+int n, valor;
+cout<<"Insira o tamanho da matriz:";
+cin>> n;
+cout <<"insira o valor da matriz:";
+cin>>valor;
+int matriz [MAX][MAX];
+zerar_matriz(matriz, n);
+matriz_identidade(matriz, n, valor);
+
+return 0;
+
+}
