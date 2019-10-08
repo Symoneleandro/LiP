@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+const int MAX=100;
+void ler_matriz(int matriz[][MAX], int nc, int nl){
+for(int i =0; i<nc;i++){
+    for(int j=0; j<nl;j++){
+        cout<<"Insira o corpo da matriz: \n";
+        cin>>matriz[i][j];
+    }
+}
+}
+bool esparsa( int matriz [][MAX], int nc, int nl){
+int cont,x, num ;
+for(int i=0; i<nc; i++){
+    for(int j=0; j<nl; j++){
+        if (matriz[i][j]==0){
+            cont ++;
+        }
+    }
+}
+num = nc*nl;
+x=(cont/num)*100;
+if(x >= 70){
+    return true;
+}
+else{
+    return false;
+}
+}
+int main(){
+int matriz [MAX][MAX], nc, nl;
+cout<<"Insira o tamanho da matriz:";
+cin>>nc>>nl;
+ler_matriz(matriz, nc,nl);
+if(esparsa(matriz, nc,nl)==1){
+cout<<"esparsa"<<endl;}
+else{
+    cout<<"no he esparsa"<<endl;
+}
+return 0;
+}
+
+
+
