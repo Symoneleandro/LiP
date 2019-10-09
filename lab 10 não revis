@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+const int MAX =100;
+void ler_matriz (int matriz [][MAX], int nc, int nl){
+for(int i=0; i<nc; i++){
+    for(int j=0; j<nl;j++){
+        cout<<"Insira o corpo da função:";
+        cin>>matriz[i][j];
+    }
+}
+}
+void transposta(int matriz[][MAX], int nc, int nl){
+    int aux;
+for(int i=0; i<nc; i++){
+    for(int j=i+1; j<nl;j++){
+            if(i!=0){
+            aux = matriz[i][j];
+            matriz[i][j]=matriz[j][i];
+            matriz [j][i]= aux;
+        }
+    }
+    }
+for(int j =0;j<nl;j++){
+    for(int i=0;i<nc;i++){
+        cout<<matriz[j][i]<<" ";
+
+    }
+    cout<<endl;
+}
+
+}
+
+int main(){
+int matriz[MAX][MAX], nc, nl;
+cout<<"insira o tamanho da matriz:";
+cin>>nc>>nl;
+ler_matriz(matriz, nc,nl);
+transposta(matriz, nc,nl);
+return 0;
+}
