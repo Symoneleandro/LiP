@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+const int MAX=100;
+void Preencher_M(int matriz[][MAX],int n)
+{
+    int i,j;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            cout<<"preencha a matriz:";
+            cin>>matriz[i][j];
+        }
+    }
+}
+void zerar (int matrizC[][MAX],int  n ){
+int i, j;
+for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+
+            matrizC[i][j]=0;
+        }
+    }
+
+}
+void Transposta(int n[][MAX],int mat_R[MAX][MAX],int n)
+{
+    int i,j;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            mat_R[j][i]=n[i][j];
+        }
+    }
+    
+}
+void subtracao(int matrizA[][MAX],int matrizB[][MAX], int matriz[][MAX],int n ){
+int i,j;
+int aux;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++){
+               aux = matrizA[i][j]- matrizB[i][j];
+               matriz[i][j] =aux;
+               aux =0;
+        }
+    }
+}
+void multiplicaçao(int matrizA[][MAX],int matrizB[][MAX], int matriz[][MAX],int n ){
+int i,j;
+int aux;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++){
+               aux = matrizA[i][j]* matrizB[i][j];
+               matriz[i][j] =aux;
+               aux =0;
+        }
+    }
+}
+void operçao(int matrizA[][MAX],int matrizB[][MAX], int matriz[][MAX],int n ){
+int i,j
+
+
+
+}
