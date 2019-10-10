@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+const int MAX=100;
+void Preencher_M(int n[][MAX],int nl,int nc)
+{
+    int i,j;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++)
+        {
+            cout<<"preencha a matriz:";
+            cin>>n[i][j];
+        }
+    }
+}
+void zerar (int matriz[][MAX],int  nl,int  nc2 )
+{
+    int i, j;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc2; j++)
+        {
+
+            matriz[i][j]=0;
+        }
+    }
+
+}
+void multiplicacao(int matriz1[][MAX],int matriz2[][MAX],int matriz[][MAX], int nl, int nc, int nl2, int nc2, int &linha_def, int &coluna_def )
+{
+    int i,j,k;
+    int aux, soma=0, mult;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc2; j++)
+        {
+            for(k=0; k<nl2; k++)
+            {
+                mult = matriz1[i][k]*matriz2[k][j];
+                soma = soma + mult;
+            }
+            matriz[i][j]=soma;
+            soma = 0;
+       }
+    }
+    linha_def= nl;
+    coluna_def =nc2;
+}
+void imprimir_M(int n[][MAX],int nl,int nc )
+{
+    int i,j;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++)
+        {
+            cout<<n[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+int main()
+{
+    int matriz1[MAX][MAX],matriz2[MAX][MAX], nl, nc, nl2, nc2, linha_def, coluna_def;
+    int matriz[MAX][MAX];
+    cout<<"insira o tamanho da matriz 1 :";
+    cin>>nl;
+    cin>>nc;
+    cout<<"insira o tamanho da matriz 2:";
+    cin>>nl2;
+    cin>>nc2;
+    Preencher_M(matriz1, nl,nc);
+    Preencher_M(matriz2, nl2,nc2);
+    zerar(matriz, nl,nc2);
+    multiplicacao(matriz1,matriz2,matriz,nl,nc,nl2,nc2,linha_def,coluna_def);
+    imprimir_M(matriz, linha_def,coluna_def);
+    return 0;
+
+}
