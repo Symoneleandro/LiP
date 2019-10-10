@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+const int MAX=100;
+void Preencher_M(int n[][MAX],int nl,int nc)
+{
+    int i,j;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++)
+        {
+            cout<<"preencha a matriz:";
+            cin>>n[i][j];
+        }
+    }
+}
+void zerar (int matriz[][MAX],int  nl,int  nc ){
+int i, j;
+for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++)
+        {
+
+            matriz[i][j]=0;
+        }
+    }
+
+}
+void subtracao(int matriz1[][MAX],int matriz2[][MAX], int nl,int matriz[][MAX], int nc ){
+int i,j;
+int aux;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++){
+               aux = matriz1[i][j]- matriz2[i][j];
+               matriz[i][j] =aux;
+               aux =0;
+        }
+    }
+}
+void imprimir_M(int n[][MAX],int nl,int nc)
+{
+    int i,j;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++)
+        {
+            cout<<n[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+}
+int main(){
+int matriz1[MAX][MAX],matriz2[MAX][MAX], nl, nc;
+int matriz[MAX][MAX];
+cout<<"insira o tamanho da matriz:";
+    cin>>nl;
+    cin>>nc;
+    Preencher_M(matriz1, nl,nc);
+    Preencher_M(matriz2, nl,nc);
+    zerar(matriz, nl,nc);
+    subtracao(matriz1,matriz2,matriz,nl,nc);
+    imprimir_M(matriz, nl,nc);
+    return 0;
+
+
+
+
+}
