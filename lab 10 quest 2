@@ -25,7 +25,7 @@ for(i=0; i<nl; i++)
     }
 
 }
-void subtracao(int matriz1[][MAX],int matriz2[][MAX], int nl,int matriz[][MAX], int nc ){
+void subtracao(int matriz1[][MAX],int matriz2[][MAX], int matriz[][MAX],int nl, int nc ){
 int i,j;
 int aux;
     for(i=0; i<nl; i++)
@@ -63,7 +63,5 @@ cout<<"insira o tamanho da matriz:";
     imprimir_M(matriz, nl,nc);
     return 0;
 
-
-
-
 }
+
