@@ -39,6 +39,7 @@ void Transposta(int n[][MAX],int mat_R[MAX][MAX],int nl,int nc,int& x,int& y)
     x=nc;
     y=nl;
 }
+
 void subtracao(int matriz1[][MAX],int matriz2[][MAX], int matriz[][MAX],int nl, int nc )
 {
     int i,j;
@@ -73,11 +74,41 @@ void multiplicacao(int matriz1[][MAX],int matriz2[][MAX],int matriz[][MAX], int 
     linha_def= nl;
     coluna_def =nc2;
 }
+void imprimir_M(int n[][MAX],int nl,int nc)
+{
+    int i,j;
+    for(i=0; i<nl; i++)
+    {
+        for(j=0; j<nc; j++)
+        {
+            cout<<n[i][j]<<" ";
+        }
+        cout<<endl;
+    }
 
+}
 int main(){
-int 
-
-
-
-
+    int nl, nc, nl2, nc2, x, y, linha_def, coluna_def;
+int matrizA[MAX][MAX];
+int matrizB[MAX][MAX];
+int matrizC[MAX][MAX];
+int matrizD[MAX][MAX];
+int matrizE[MAX][MAX];
+int matrizF[MAX][MAX];
+cout<<"insira o tamanho da matriz A:";
+cin>>nl>>nc;
+Preencher_M(matrizA,nl, nc);
+cout<<"Insira o tamanho da matriz B:";
+cin>>nl2>>nc2;
+Preencher_M(matrizB,nl2,nc2);
+zerar ( matrizC, nl, nc );
+zerar ( matrizD, x, y );
+zerar ( matrizE, linha_def, coluna_def );
+zerar ( matrizF, y, x );
+Transposta(matrizB,matrizD,nl,nc,x,y);
+multiplicacao(matrizA,matrizB,matrizE, nl, nc,  nl2, nc2,linha_def, coluna_def );
+Transposta(matrizE,matrizF, nl, nc, x, y);
+subtracao( matrizF,matrizD,matrizC, nl,nc );
+imprimir_M(matrizC, nl, nc);
+return 0;
 }
