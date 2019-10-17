@@ -1,0 +1,97 @@
+#include<iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+const int MAX=100;
+
+void identidade(int matriz [][MAX], int n )
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if (i==j)
+            {
+                matriz[i][j]=1;
+            }
+            else
+            {
+                matriz[i][j]=0;
+            }
+        }
+    }
+}
+void trocalinha (int matriz[][MAX], int nc, int l1, int l2)
+{
+    int  aux =0;
+    for(int j=0; j<nc; j++)
+    {
+        aux = matriz[l1][j];
+        matriz[l1][j]= matriz[l2][j];
+        matriz[l2][j]=aux;
+    }
+}
+void trocacoluna (int matriz[][MAX], int nl, int c1, int c2)
+{
+    int  aux =0;
+
+    for(int i=0; i<nl; i++)
+    {
+
+        aux = matriz[i][c1];
+        matriz[i][c1]= matriz[i][c2];
+        matriz[i][c2]=aux;
+
+    }
+}
+void exibir (int matriz[][MAX], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            cout<<matriz[i][j]<<" ";
+        }
+
+        cout<<endl;
+    }
+}
+void  permuta ( int matriz[][MAX],int N, int V  )
+{
+    int l1,l2,c1,c2;
+    for(int i = 0; i < V; i++)
+    {
+        if(rand() % 2 ==0)
+        {
+            l1= rand ()%N;
+            l2= rand ()%N;
+            trocalinha(matriz, N, l1, l2);
+            cout<<"permuta da linha "<<l1<<" pela linha "<<l2<<endl;
+        }
+        else
+        {
+            c1=rand ()%N;
+            c2=rand()%N;
+            trocacoluna(matriz, N, c1, c2);
+            cout<<"permuta da coluna "<<c1<<" pela coluna "<<c2<<endl;
+
+        }
+    }
+}
+
+
+
+int main ()
+{
+    int matriz[MAX][MAX], nl, nc, l1,l2, c1, c2, N, v;
+    cout<<"Insira o tamanho da matriz identidade:";
+    cin>>N;
+    cout<<"Insira o numero de troca:";
+    cin>>v;
+    identidade(matriz, N);
+    permuta (matriz, N, v);
+    exibir (matriz,N);
+
+    return 0;
+}
+
