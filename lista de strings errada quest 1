@@ -1,0 +1,51 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX = 100;
+struct Aluno
+{
+    char nome[STRMAX];
+    float matricula;
+    float nota;
+};
+void preencher(Aluno identifica[MAX], int n)
+{
+    for (int i=0; i<n; i++)
+        cout << "Insira o nome do aluno: ";
+    cin.getline(identifica[i].nome, STRMAX);
+    cout<<"insira a matricula";
+    cin>>identifica.matricula;
+    cout << "Insira a nota do aluno: ";
+    cin >> identifica[i].nota;
+
+
+};
+void calcula (Aluno identifica[MAX], int n, Aluno &maior, Aluno &menor )
+{
+    for (int i=0; i<n; i++)
+    {
+        Aluno maior= identifica[i];
+        Aluno menor = identifica [i];
+        if( identifica[i].nota>maior)
+        {
+            maior= identifica[i].nota;
+        }
+        if(identifica[i].nota< menor )
+        {
+            menor=identifica [i].nota;
+        }
+        cout<<maior.nome<<" "<<maior.matricula<<" "<<maior.nota<<endl;
+        cout<<menor.nome<<" "<<maior.matricula<<" "<<maior.nota<<endl;
+    }
+    int main()
+    {
+        Aluno &maior, &menor;
+        int n;
+        cout<<"numero de alunos";
+        cin>>n;
+        Aluno identifica[MAX];
+        preencher(indentifica, n);
+        calucula(identifica, n, maior, menor);
+    }
+
