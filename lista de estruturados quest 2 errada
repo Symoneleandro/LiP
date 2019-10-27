@@ -1,0 +1,59 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+struct Data
+{
+    int dia;
+    int mes;
+    int ano;
+};
+int calcula (Data data, Data data1)
+{
+    if(data.ano>data1.ano)
+    {
+        if(data.mes>data1.mes)
+        {
+            if(data.dia>data1.dia)
+            {
+                return 1;
+            }
+        }
+    }
+    else if (data.ano==data1.ano)
+    {
+        if(data.mes==data1.mes)
+        {
+            if(data.dia==data1.dia)
+            {
+                return 0;
+            }
+        }
+    }
+    else
+    {
+        return -1;
+    }
+}
+int main ()
+{
+    Data data, data1;
+    cout<<"insira o dia ";
+    cin>>data.dia>>data1.dia;
+    cout << "Insira o mes: ";
+    cin>>data.mes>>data1.mes;
+    cout << "Insira o ano: ";
+    cin >> data.ano>>data1.ano;
+    if( calcula(data,data1)==1)
+    {
+        cout<<"Data 1 mais antiga"<<endl;
+    }
+    else if(calcula(data,data1)==0)
+    {
+        cout<<"datas iguais"<<endl;
+    }
+    else
+    {
+        cout<<"data 2 mais antiga"<<endl;
+    }
+    return 0;
+}
