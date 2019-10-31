@@ -1,0 +1,67 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX=100;
+struct Data
+{
+    int dia;
+    int mes;
+    int ano;
+};
+struct Funcionario
+{
+    char nome[STRMAX];
+    Data data_adm;
+    float salario;
+};
+void preencher (Funcionario fun[], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Nome do funcionario";
+        cin.ignore();
+        cin.getline(fun[i].nome, 50);
+        cout<<"Data de admissão do funcionario";
+        cin>>fun[i].data_adm.dia;
+        cin>>fun[i].data_adm.mes;
+        cin>>fun[i].data_adm.ano;
+        cout<<"Salario do funcionario";
+        cin>>fun[i].salario;
+    }
+}
+
+void procura_data(Funcionario fun[], int n, Data data_1)
+{
+    Funcionario cont[];
+    cont.nome=" ";
+    cont.data.dia=0;
+    cont.data.mes=0;
+    cont.data.ano=0;
+    cont.salario=0.0;
+
+    for(int i=0; i<n; i++)
+    {
+        if(fun[i].data_adm.ano> data_1.ano)
+        {
+            cont[i]=fun[i].nome<<" "<<fun[i].data_adm.dia<<"/"<<fun[i].data_adm.mes<<"/"<<fun[i].data_adm.ano<<" "<<fun[i].salario<<endl;
+        }
+        else if(data_adm.mes)
+
+                
+
+                        
+        }
+        int main ()
+        {
+            int n;
+            cout<<"insira a quantidade de funcionario";
+            cin>>n;
+            Funcionario fun[n];
+            preencher(fun, n);
+            Data data_1;
+            cout<<"insira a data da procura";
+            cin>>data_1.dia>>data_1.mes>>data_1.ano;
+            procura_data(fun, n, data_1);
+            return 0;
+        }
