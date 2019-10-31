@@ -1,0 +1,45 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX=100;
+struct Data
+{
+    int dia;
+    int mes;
+    int ano;
+};
+struct Funcionario
+{
+    char nome[STRMAX];
+    Data data_adm;
+    float salario;
+};
+void preencher (Funcionario fun[], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Nome do funcionario";
+        cin>>fun[i].nome;
+        cin.ignore();
+        cout<<"Data de admissão do funcionario";
+        cin>>fun[i].data_adm.dia;
+        cin>>fun[i].data_adm.mes;
+        cin>>fun[i].data_adm.ano;
+        cout<<"Salario do funcionario";
+        cin>>fun[i].salario;
+    }
+}
+int main(){
+int n;
+cout<<"insira o numero de funcionario";
+cin>>n;
+Funcionario fun[n];
+preencher(fun, n);
+for(int i=0; i<n; i++){
+    cout<<fun[i].nome<<" "<<fun[i].data_adm.dia<<"/"<<fun[i].data_adm.mes<<"/"<<fun[i].data_adm.ano<<" "<<fun[i].salario<<endl;
+}
+cout<<endl;
+return 0;
+}
+
