@@ -1,0 +1,68 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX=100;
+struct Data
+{
+    int dia;
+    int mes;
+    int ano;
+};
+struct Funcionario
+{
+    char nome[STRMAX];
+    Data data_adm;
+    float salario;
+};
+void preencher (Funcionario fun[], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Nome do funcionario";
+        cin.ignore();
+        cin.getline(fun[i].nome, 50);
+        cout<<"Data de admissão do funcionario";
+        cin>>fun[i].data_adm.dia;
+        cin>>fun[i].data_adm.mes;
+        cin>>fun[i].data_adm.ano;
+        cout<<"Salario do funcionario";
+        cin>>fun[i].salario;
+    }
+}
+int procura(Funcionario fun[], int n, char nome_fun[])
+{
+    for (int i =0; i<n; i++)
+    {
+        if(strcmp(fun[i].nome,nome_fun)==0)
+        {
+            return i;
+        }
+        return -1;
+
+    }
+
+
+}
+int main()
+{
+    int n, posicao=0;
+    char nome_fun[STRMAX];
+    cout<<"insira o numero de funcionario";
+    cin>>n;
+    Funcionario fun[n];
+    preencher(fun, n);
+    cout<<"Insira o nome do funcionario";
+    cin.ignore();
+    cin.getline(nome_fun,50);
+    posicao=procura(fun, n, nome_fun);
+    if (posicao != -1 )
+    {
+        cout<<fun[posicao].nome<<" "<<fun[posicao].data_adm.dia<<"/"<<fun[posicao].data_adm.mes<<"/"<<fun[posicao].data_adm.ano<<" "<<fun[posicao].salario;
+    }
+    else
+    {
+        cout<<"Funcionario nao existe";
+    }
+    return 0;
+}
