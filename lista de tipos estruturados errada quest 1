@@ -12,40 +12,42 @@ struct Aluno
 void preencher(Aluno identifica[MAX], int n)
 {
     for (int i=0; i<n; i++)
+    {
         cout << "Insira o nome do aluno: ";
-    cin.getline(identifica[i].nome, STRMAX);
-    cout<<"insira a matricula";
-    cin>>identifica.matricula;
-    cout << "Insira a nota do aluno: ";
-    cin >> identifica[i].nota;
+        cin.ignore();
+        cin.getline(identifica[i].nome, 50);
+        cout<<"insira a matricula";
+        cin>>identifica.matricula;
+        cout << "Insira a nota do aluno: ";
+        cin >> identifica[i].nota;
+    }
 
-
-};
-void calcula (Aluno identifica[MAX], int n, Aluno &maior, Aluno &menor )
+}
+void calcula (Aluno identifica[ ], int n, Aluno maior, Aluno menor )
 {
     for (int i=0; i<n; i++)
     {
-        Aluno maior= identifica[i];
-        Aluno menor = identifica [i];
-        if( identifica[i].nota>maior)
+        Aluno maior.nota= identifica[i].nota;
+        Aluno menor.nota = identifica [i].nota;
+        if( identifica[i].nota>maior.nota)
         {
-            maior= identifica[i].nota;
+            maior.nota= identifica[i].nota;
         }
-        if(identifica[i].nota< menor )
+        if(identifica[i].nota< menor.nota )
         {
-            menor=identifica [i].nota;
+            menor.nota=identifica [i].nota;
         }
         cout<<maior.nome<<" "<<maior.matricula<<" "<<maior.nota<<endl;
         cout<<menor.nome<<" "<<maior.matricula<<" "<<maior.nota<<endl;
     }
     int main()
     {
-        Aluno &maior, &menor;
+        Aluno maior, menor;
         int n;
         cout<<"numero de alunos";
         cin>>n;
         Aluno identifica[MAX];
         preencher(indentifica, n);
         calucula(identifica, n, maior, menor);
+        return 0;
     }
-
