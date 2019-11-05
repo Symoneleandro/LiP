@@ -1,0 +1,37 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX=100;
+struct Aluno
+{
+    char nome[STRMAX];
+    int matricula;
+    float nota;
+};
+void preencher (Aluno aluno[], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Nome do aluno";
+        cin>>aluno[i].nome;
+        cin.ignore();
+        cout<<"insira a matricula";
+        cin>>aluno[i].matricula ;
+        cout<<"insira a nota ";
+        cin>>aluno[i].nota;
+    }
+}
+void maior (Aluno aluno[], int n, Aluno )
+int main(){
+int n;
+cout<<"insira o numero de aluno";
+cin>>n;
+Aluno aluno[n];
+preencher(aluno, n);
+for(int i=0; i<n; i++){
+    cout<<aluno[i].nome<<" "<<aluno[i].matricula<<" "<<aluno[i].nota<<" "<<endl;
+}
+cout<<endl;
+return 0;
+}
