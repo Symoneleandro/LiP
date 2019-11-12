@@ -1,0 +1,63 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX=100;
+struct Aluno
+{
+    char nome[STRMAX];
+    float nota;
+};
+void ler_vetor(Aluno aluno[], int n);
+bool procura(Aluno aluno[], int n, char nome[]);
+int main ()
+{
+    int n, posicao;
+    cout<<"Insira a quantidade de alunos:";
+    cin>>n;
+    Aluno aluno[n];
+    ler_vetor(aluno,n);
+    char nome[STRMAX];
+    cout<<"Insira o nome do aluno que procura";
+    cin.ignore();
+    cin.getline(nome,50);
+
+    posicao=procura(aluno, n, nome);
+    if(posicao!=-1)
+    {
+        cout<<aluno[posicao].nome<<" "<<aluno[posicao].nota<<endl;
+    }
+    else
+    {
+        cout<<"Aluno nao cadastrado"<<endl;
+    }
+
+    return 0;
+}
+void ler_vetor(Aluno aluno[], int n)
+{
+
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Insira o nome do aluno:";
+        cin.ignore();
+        cin.getline(aluno[i].nome, 50);
+        cout<<"Insira a nota do aluno:";
+        cin>>aluno[i].nota;
+    }
+
+}
+bool procura(Aluno aluno[], int n, char nome[])
+{
+    for(int i=0; i<n; i++)
+    {
+        if (strcmp(aluno[i].nome, nome)==0)
+        {
+            return i;
+
+        }
+
+    }
+    return-1;
+
+}
