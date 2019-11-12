@@ -1,0 +1,23 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX=100;
+void inversa(char[]);
+int main()
+{
+    char nome[STRMAX];
+    cout<<"Insira o nome ";
+    cin.ignore();
+    cin.getline(nome,50);
+    inversa(nome);
+    return 0;
+}
+void inversa(char nome[])
+{
+    char inversa[STRMAX];
+    for(int i=strlen(nome); i>=0; i--)
+    {
+        cout<<nome[i];
+    }
+
+}
