@@ -1,0 +1,70 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int STRMAX = 100;
+const int MAX=100;
+struct Aluno
+{
+    char nome[STRMAX];
+    float nota;
+};
+void ler_vetor(Aluno aluno[], int n);
+float maior_nota(Aluno aluno[], int n);
+float menor_nota(Aluno aluno[], int n );
+int main ()
+{
+    int n, a, b;
+    cout<<"Insira a quantidade de alunos:";
+    cin>>n;
+    Aluno aluno[n];
+    ler_vetor(aluno,n);
+    a =maior_nota(aluno, n);
+    b=menor_nota(aluno, n);
+    for(int i=0; i<n; i++)
+    {
+        cout<<aluno[a].nome<<" "<<aluno[a].nota<<endl;
+        cout<<aluno[b].nome<<" "<<aluno[b].nota<<endl;
+    }
+    return 0;
+}
+void ler_vetor(Aluno aluno[], int n)
+{
+
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Insira o nome do aluno:";
+        cin.ignore();
+        cin.getline(aluno[i].nome, STRMAX);
+        cout<<"Insira a nota do aluno:";
+        cin>>aluno[i].nota;
+    }
+
+}
+float maior_nota(Aluno aluno[], int n, Aluno maior[] )
+{
+    Aluno maior[];
+    maior[0].nome =aluno[0]. nome;
+    maior[0].nota =aluno[0]. nota;
+    for(int i=0; i<n; i++)
+    {
+        if(aluno[i]>=maior[i])
+        {
+            maior[i]=aluno[i];
+        }
+    }
+    return maior;
+}
+float menor_nota(Aluno aluno[], int n )
+{
+    Aluno menor[];
+    menor[0]. nome=aluno[0].nome ;
+    menor[0]. nota=aluno[0].nota ;
+    for(int i=0; i<n; i++)
+    {
+        if(aluno[i]<=menor[i])
+        {
+            menor[i]=aluno[i];
+        }
+    }
+    return menor;
+}
