@@ -1,0 +1,41 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+const int MAX=100;
+struct Data{
+int dia;
+int mes;
+int ano;
+};
+bool mais_antiga(Data data1, Data data2);
+int main(){
+Data data1, data2;
+cout<<"Insira a  primeira data";
+cin>>data1.dia>>data1.mes>>data1.ano;
+cout<<"Insira a segunda data";
+cin>>data2.dia>>data2.mes>>data2.ano;
+if(mais_antiga(data1, data2)==0){
+    cout<<"DATAS IGUAIS"<<endl;
+}
+if(mais_antiga(data1, data2)==1){
+cout<<"Primeira data é mais antiga"<<endl;
+}
+if(mais_antiga(data1, data2)==-1){
+cout<<"Segunda data é mais antiga"<<endl;
+
+}
+return 0;
+}
+bool mais_antiga(Data data1, Data data2){
+    if(data1.ano==data2.ano&&data1.mes==data2.mes&&data1.dia==data2.dia){
+        return 0;
+    }
+    if(data1.ano>data2.ano||data1.mes>data2.mes&&data1.ano==data2.ano||data1.ano==data2.ano&&data1.mes==data2.mes&&data1.dia>data2.dia){
+        return -1;
+    }
+    if(data1.ano<data2.ano||data1.mes<data2.mes&&data1.ano==data2.ano||data1.ano==data2.ano&&data1.mes==data2.mes&&data1.dia<data2.dia){
+return 1;
+
+}
+}
+\\ver a parte da função, a igual está funcionando, menos a maior e menor\\
