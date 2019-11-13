@@ -1,0 +1,19 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+
+const int STRMAX = 100;
+
+int main()
+{
+    char s1[STRMAX];
+
+
+    cin.getline(s1,STRMAX);
+    strupr(s1);
+
+
+        cout<<s1<<endl;
+
+    return 0;
+}
