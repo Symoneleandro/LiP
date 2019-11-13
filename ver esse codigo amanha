@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 30
+
+int ocorrencias(char palavra[], char letra){
+
+    if(letra == '\0'){
+        return 0;
+    }
+
+    int i;
+    //palavra[i+1];
+
+    if(letra == palavra[i]){
+        return 1 + ocorrencias(palavra[i++], letra);
+    }else{
+        return ocorrencias(palavra[i++], letra);
+    }
+}
+
+int main(){
+
+    char palavra[MAX];
+    char letra;
+
+    scanf("%s %c", palavra, &letra);
+
+    int ocorre = ocorrencias(palavra, letra);
+
+    printf("%d", ocorre);
+
+    return 0;
+}
